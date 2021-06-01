@@ -1,5 +1,3 @@
-
-
 class Sockets {
 
     constructor( io ) {

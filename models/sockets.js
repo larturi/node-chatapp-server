@@ -31,8 +31,8 @@ class Sockets {
             // Escuchar cuando el cliente emite un mensaje personal
             socket.on('mensaje-personal', async (payload) => {
                 const mensaje = await grabarMensaje(payload);
-                console.log(mensaje);
                 this.io.to(payload.para).emit('mensaje-personal', mensaje);
+                this.io.to(payload.de).emit('mensaje-personal', mensaje);
             });
 
             // Emitir todos los usuarios conectados
